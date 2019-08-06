@@ -1,4 +1,5 @@
-puts 'Hello World!'
+the_first_string = 'Hello world!'
+puts the_first_string
 p 'Hello World!'
 print 'Hello World!'
 
@@ -10,9 +11,8 @@ greeting = 'Hello World!'
 puts greeting
 p greeting
 
-
 def say_hi
-    puts 'say_hi,Hello World!'
+  puts 'say_hi,Hello World!'
 end
 
 say_hi
@@ -21,11 +21,10 @@ say_hi
 # 所以像上述這樣就是直接叫出say_hi func
 
 def say_hi_call_value(type_thing)
-    puts type_thing
+  puts type_thing
 end
 
 say_hi_call_value('Hello world call by parameter')
-
 
 first_name = 'Chang'
 last_name = 'Luis'
@@ -36,8 +35,7 @@ puts "My name is #{first_name} #{last_name}."
 # 內容輸入的模式，#{}，類似js的${}
 # 但要記住一件事情，外面必須要用雙引號!!
 
-
-puts "This is string".class
+puts 'This is string'.class
 puts 10.class
 puts 10.0.class
 
