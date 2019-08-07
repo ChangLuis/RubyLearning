@@ -9,3 +9,4 @@
 * [if_else_condition](if_else_statement.rb)
 * [Array](array.rb)
 * [For loop](for_loop.rb)
+* [Hash](hash.rb)
