@@ -5,3 +5,5 @@
 * [String](string.rb)
 * [Comparison](comparison.rb)
 * [basic_methods](basic_methods.rb)
+* [Funciton](functiono.rb)
+* [if_else_condition](if_else_statement.rb)
