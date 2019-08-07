@@ -7,3 +7,4 @@
 * [basic_methods](basic_methods.rb)
 * [Funciton](functiono.rb)
 * [if_else_condition](if_else_statement.rb)
+* [Array](array.rb)
