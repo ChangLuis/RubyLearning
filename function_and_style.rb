@@ -4,3 +4,7 @@
 
 # 定義function時，後面不用冒號，沒有要定義傳入參數的話，括號也可以省略
 # 但在最後要加上 end
+
+# variable name 越長要用底線隔開
+# function name 規則與變數規則一樣
+# class name 只要是單字的開頭都要大寫， example: class WhatTheHack
