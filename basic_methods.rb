@@ -68,3 +68,16 @@ puts division1, division2, division3, division4, division5, division6
 
 # 你只要整數與整數做任何運算，他輸出只會有整數部分，所以這個在除法上，要注意一下
 # 如果要出現浮點數的部分，你一定要有一個數是float
+
+puts 0 == false
+
+# 你要注意，ruby的0與false不是同一個object，所以0不能拿來當作if的判斷
+
+check = 0
+p 'Zero is not false' if check
+
+# 像上面這種情況， ruby會讓他過喔，因為check有內容，是0，不會判斷成false
+
+p 'Wow! You can see this line.' if 0
+
+# 這行更直接寫0，ruby會給他過喔
