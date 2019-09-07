@@ -167,13 +167,21 @@ range_z = ("a".."g").to_a
 p range_z.zip(range_z[1..-1])
 
 # ruby的zip 變成method 像上述這樣用, 這個zip主要是讓你去崁別的array,而且只能崁一個，當然你也可以用這個method崁自己
+# 但崁不同長度的array要注意喔 python 會取比較短的array
+# ruby反而取比較長的array 這樣就會出現後面會含有nil的組合，在寫碼的時候要注意去處理nil
 # 只能崁一個，那如果我要崁很多個呢？
 # 我後來就發現還有另一個更好用的method
 
 p range_z.each_cons(2)
 
 # each_cons method也是enumertator method之一
-# 括號內 可以指定要zip的長度，像我上面就指定2 效果就會跟 range_z.zip(range_z[1..-1]) 一樣
+# 括號內 可以指定要zip的長度，像我上面就指定2 效果就會跟 range_z.zip(range_z[1..-1]) 一樣,但沒有nil的問題
 # 當然你也可以指定更長的長度，不過這個method 主要是要來處理本身array前後內容的比較
 
 range_z.each_cons(2) { |a, b| p [a, b] }
+
+range_z = range_z.zip(range_z[1..-1])
+range_z.flatten!
+p range_z
+
+# flatten method 是將nested array 全部移除,變成一個沒有nested array的array
