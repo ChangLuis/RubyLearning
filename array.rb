@@ -132,7 +132,9 @@ range3.each_with_index { |char, idx| puts "charater is #{char},index is #{idx}."
 range3.each.with_index { |char, idx| puts "charater is #{char},index is #{idx}." }
 
 # 還有這種先each  再加上with_index的寫法
-# with_index是建立在要各別iterate內容 才能顯示的index
+# with_index是建立在enumerator的each method上才能使用的method 可以個別操作index
+# 但each 可以操作char 所以你打each.with_index 可以同時操作char and index
+# 用起來就跟each_with_index一樣
 # with_index沒辦單獨使用!!
 # 那用這個的好處在哪裡？
 # each.with_index 可以自定義起始index開頭
@@ -141,11 +143,37 @@ range3.each.with_index(1) { |char, idx| puts "charater is #{char},index is #{idx
 
 # 那有沒有辦法直接用with_index?
 # 其實有方法的，with_index他其實是屬於enumertator 這個內建的class
-# each這個method也許是包在enumerator裡面 然後被其他object借用，操作這個method後，可能就把enumertator繼承
+# each這個method也是包在enumerator裡面 然後被其他object借用，操作each method後，可能就把enumertator繼承
 # 所以我其實可以先把array轉成enumertator 接著就能直接操作with_index
 
 range4 = range3.to_enum
 p range4
 
+# to_enum method 直接將class 轉成enumertator 並且處於each method狀態
+# 但這個method只是將這個array轉成enumerator object 並沒有被執行
+# 要去執行它就要配合其他iterator 去操作
+
 range4.with_index { |char, idx| puts "charater is #{char},index is #{idx}." }
 range4.with_index(2) { |char, idx| puts "charater is #{char},index is #{idx}." }
+
+# 因此你就可以直接操作with_index 並且能同時操作char and index
+
+# 如果我只是想要對index做操作呢？
+
+range3.each_index { |idx| print idx, '--' }
+p '\n'
+
+range_z = ("a".."g").to_a
+p range_z.zip(range_z[1..-1])
+
+# ruby的zip 變成method 像上述這樣用, 這個zip主要是讓你去崁別的array,而且只能崁一個，當然你也可以用這個method崁自己
+# 只能崁一個，那如果我要崁很多個呢？
+# 我後來就發現還有另一個更好用的method
+
+p range_z.each_cons(2)
+
+# each_cons method也是enumertator method之一
+# 括號內 可以指定要zip的長度，像我上面就指定2 效果就會跟 range_z.zip(range_z[1..-1]) 一樣
+# 當然你也可以指定更長的長度，不過這個method 主要是要來處理本身array前後內容的比較
+
+range_z.each_cons(2) { |a, b| p [a, b] }

@@ -56,3 +56,12 @@ row.each_char.with_index { |char, index| p char, index }
 
 # 如果要一起操作index 可以用with_index
 # with_index 是包含在enumerator class裡面,無法單獨使用
+
+p row.chars
+
+# chars method 主要是將string個別輸出 轉成array
+
+p row.split('')
+
+# split method 功能就跟python split一樣
+# 如果在括號內只用'' 效果就跟chars一樣
