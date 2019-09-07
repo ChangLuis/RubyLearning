@@ -41,3 +41,18 @@ puts 10.0.class
 
 # 直接在object後面加上 .class
 # 這是 Ruby的type
+
+row = 'RubyIsSomethingElse.'
+
+row.each_char do |char|
+  p char
+end
+
+row.each_char { |char| p char }
+
+# string的內容，如果想要iterate，method用的是each_char 不是each
+
+row.each_char.with_index { |char, index| p char, index }
+
+# 如果要一起操作index 可以用with_index
+# with_index 是包含在enumerator class裡面,無法單獨使用
