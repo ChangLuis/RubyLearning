@@ -57,18 +57,6 @@ puts "The calculation of num1 and num2 is #{num1 + num2}"
 
 # 如果你的num1 and num2 轉成整數後不是數字，他會直接轉成0... 所以一定不會報錯
 
-division1 = 10 / 4
-division2 = 10 / 4.0
-division3 = 10.0 / 4
-division4 = 10 / 2.0
-division5 = 10 * 2
-division6 = 10 * 2.0
-
-puts division1, division2, division3, division4, division5, division6
-
-# 你只要整數與整數做任何運算，他輸出只會有整數部分，所以這個在除法上，要注意一下
-# 如果要出現浮點數的部分，你一定要有一個數是float
-
 puts 0 == false
 
 # 你要注意，ruby的0與false不是同一個object，所以0不能拿來當作if的判斷
