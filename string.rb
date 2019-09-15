@@ -65,3 +65,30 @@ p row.split('')
 
 # split method 功能就跟python split一樣
 # 如果在括號內只用'' 效果就跟chars一樣
+
+p 5.to_s(2)
+
+# to_s method 除了可以把數字轉成string 他還可以指定你要用幾進位來轉成string
+# 像上面我就轉成二進位的string
+
+p "  whitespace erase".lstrip
+
+# 將左邊的所有空白去掉
+
+p "whitespace erase    ".rstrip
+
+# 將右邊的所有空白去掉
+
+p "   whitespace  ".strip
+
+# 將兩邊的所有空白去掉
+# 可惜的是，ruby的strip只能去掉空白，不能去掉自定義的文字
+# 所以如果要去掉自定義的內容，必須用正則表示法
+
+p "000001a".sub(/^0*/, "")
+
+# //是某一個範圍，你要自定義的範圍，^是起始位置，*是無數量限制，例如這邊就是無限量的0
+
+p '00110101001'.gsub("01", "0-1")
+
+# 另一種replace method是 gsub 就是只是要符合的內容就會轉換
