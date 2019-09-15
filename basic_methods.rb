@@ -69,3 +69,34 @@ p 'Zero is not false' if check
 p 'Wow! You can see this line.' if 0
 
 # 這行更直接寫0，ruby會給他過喔
+
+# and or && || 他們的權重你要注意， && || 的權重高過and or很多
+# 在判斷式常常會用到 or and的情況，
+# 我這幾天寫leetcode遇到坑
+if 123.class == Integer && "jojo".class == String
+  p "It's the && part"
+end
+
+# 上述這種情況還好， && and 都會通過
+
+if 123.class.eql? Integer && "jojo".class == String
+  p "It's the && part"
+elsif 123.class.eql? Integer and 'jojo'.class == String
+  p "It's the and apart"
+end
+
+# 像上述這種情況，.eql? 會把後面 Integer && "jojo".class == String 看成你要確認的內容
+# 所以你要避免這種情況，一種就是用and 另一種就是要在後面加括號而且不要有空格
+
+if 123.class.eql?(Integer) && "jojo".class == String
+  p "It's the && part"
+elsif 123.class.eql? Integer and 'jojo'.class == String
+  p "It's the and apart"
+end
+
+# rubocop也會對上面這種情況 hightlight
+# 那為什麼&& || and or 的權重不一致？
+# 主要是ruby會有這種寫法 a ||=1
+# || &&的權重會比=高 and or則是比=低
+# a = a || 1
+# 會先判斷 a || 1 才賦與值給a
