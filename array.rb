@@ -25,11 +25,6 @@ p list1
 
 # ruby也可以用js的push
 
-list1 << 'lily'
-p list1
-
-# ruby也可以用<<符號 來表示我要加入內容於array後面
-
 list1.unshift('Jack')
 p list1
 
@@ -77,10 +72,11 @@ p range1.to_a.shuffle
 
 # 生成array是增冪排列，你可以用shffule去洗牌，讓生成的內容打亂
 
-range1 = range1.to_a.shuffle!
+range1 = range1.to_a
+range1.shuffle!
 p range1
 
-# shuffle!這個後面加了驚嘆號，代表要存入此次的改變，當然你得用一個變數讓他存
+# shuffle!這個後面加了驚嘆號，代表要直接改變原本的array in-place
 
 range2 = (1..5).to_a
 p range2
@@ -185,3 +181,13 @@ range_z.flatten!
 p range_z
 
 # flatten method 是將nested array 全部移除,變成一個沒有nested array的array
+
+p [1, 3, 5, 7, 123, 333, 5645].max
+
+# ruby 的max與min是附在array裡面
+# 所以你要快速比較就必須用array模式操作,不過我得講，hash雖然沒有max min mehtod 但enumerator有max_by min_by 可以拿來借用
+# 之前我有做過一題目 他要在array前後比較內容大小,最後加總
+# 剛好配上each_cons(2) method,又因為each_cons(2)會自動將前後內容以array包起來
+# 所以整段式子 就可以直接寫成 xxx.each_cons(2).map(&:max).sum
+
+p [1, 2, 3, 4, 5, 6].each_cons(2).map(&:max).sum
