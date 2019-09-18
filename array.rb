@@ -191,3 +191,18 @@ p [1, 3, 5, 7, 123, 333, 5645].max
 # 所以整段式子 就可以直接寫成 xxx.each_cons(2).map(&:max).sum
 
 p [1, 2, 3, 4, 5, 6].each_cons(2).map(&:max).sum
+
+myself = [nil, 1, 2, 3, 4, 5]
+
+p myself.index(3)
+p myself.rindex(3)
+
+# .index method 從前面開始找到第一個符合條件的index
+# .rindex method 從後面開始找到第一個符合條件的index 但這個index也是從前面開始算
+# .rindex method 其實python也有
+
+p myself.find { |num| num != nil }
+p myself.find(&:itself)
+
+# .find method找出第一個符合條件的內容
+# 看到:itself了嗎？ 這挺好用的
