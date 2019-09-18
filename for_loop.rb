@@ -42,3 +42,25 @@ p (1..50).to_a.reduce { |all_sum, num| all_sum += num }
 
 # 基本上就是一直加每個num,所以其實可以直接寫成&:+
 # 但ruby對這個&:+ 進一步優化成:+
+
+p (0..10).to_a.shuffle.first
+p (0..10).to_a.shuffle.first(5)
+
+# ruby亂數產生必須依附在array上
+
+p [0..10].shuffle.first
+
+# 這樣寫是不行的 0..10只是一個範圍，他還沒有展開，即便放在array裡面也一樣
+
+p [0..10].to_a
+
+# 這樣還是沒有展開，為什麼？因為他已經是一個array...
+
+p [*0..10]
+
+# 其實作者自己也想到有這種問題，所以他搞了一個方式，讓我們用簡短的方式操作，只要在前面加上*號，就會展開
+
+p [*0..10].sample(1).first
+p [*0..10].sample(5)
+
+# sample shuffle method是一樣都在產生亂數的method
