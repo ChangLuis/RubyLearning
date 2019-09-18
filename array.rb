@@ -192,6 +192,11 @@ p [1, 3, 5, 7, 123, 333, 5645].max
 
 p [1, 2, 3, 4, 5, 6].each_cons(2).map(&:max).sum
 
+p [[1, 2], [-1, 3], [9, 10], [9, 10]].max
+
+# .max .min method 可以判斷這種巢狀array
+# 對完[0],會繼續對[1],以此類堆，但他不是select，回傳只會有一個值
+
 myself = [nil, 1, 2, 3, 4, 5]
 
 p myself.index(3)
