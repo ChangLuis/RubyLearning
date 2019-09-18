@@ -53,3 +53,18 @@ p people.max_by { |name, age| age }
 
 # 正常來講，hash要比較內容，通常要轉成array才能比較，不過ruby已經在eumerator max_by min_by 寫好method 你可以直接挪用就好
 # 而且max_by min_by 生成的array直接幫你把key and value搞成一對，真方便
+
+dict5 = Hash.new(0)
+dict5["Jack"] += 1
+dict5["Rose"] += 1
+p dict5
+
+# 在Hash.new括號內可以加上每個新建的value default值
+
+dict6 = Hash.new
+5.times { (dict6[:nums] ||= []) << [*0..10].sample(1)[0] }
+
+p dict6
+
+# 在python dict可以用.get method 來設定初始值，
+# Ruby沒有這種method，但是可以用上面這種方式 ||= 來賦予初始值
