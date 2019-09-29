@@ -30,10 +30,6 @@ p list1
 
 # .unshift method可以再將內容加在array前面
 
-p list1.uniq
-
-# .uniq會幫你去除重複的內容
-
 p list1.empty?
 
 p list1.include?('Luis')
@@ -211,3 +207,30 @@ p myself.find(&:itself)
 
 # .find method找出第一個符合條件的內容
 # 看到:itself了嗎？ 這挺好用的
+
+nested_array = [[1, 2, 3], [5, 6, 7], [9, 10, 11]]
+p nested_array.transpose
+# .transpose method就是python zip(*),他會對nested array 同一個index,做合併
+
+p nested_array.size
+p nested_array.length
+p nested_array.count
+
+# .size .length .count method都可以視為在輸出長度
+# 但count 可以做一些條件判斷，只數符合條件的部分
+
+count_array = [1, 2, 3, 4, 4, 7, 7, 7, 9]
+p count_array.count 7
+p count_array.count { |num| num > 5 }
+p count_array.count { |num| !num.nil? }
+
+# 可以直接某個你已經知道得值，也可以判斷某個範圍，也可以判斷是否符合比較底層的條件
+
+unique_array = [1, 2, 3, 4, 5, 5, 6, 6, 6, 6, 7, 7, 8, 9]
+
+p unique_array.uniq
+
+# array要找未重複的數字，可以不用像python那樣轉成set
+# 可以直接用.uniq method
+
+
