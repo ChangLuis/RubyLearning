@@ -92,3 +92,11 @@ p "000001a".sub(/^0*/, "")
 p '00110101001'.gsub("01", "0-1")
 
 # 另一種replace method是 gsub 就是只是要符合的內容就會轉換
+
+str = "UpperandLower"
+
+p str.upcase
+p str.downcase
+p str.capitalize
+
+#  上述分別是 全大寫，全小寫，只讓開頭大寫
