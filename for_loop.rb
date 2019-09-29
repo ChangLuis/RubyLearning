@@ -64,3 +64,20 @@ p [*0..10].sample(1).first
 p [*0..10].sample(5)
 
 # sample shuffle method是一樣都在產生亂數的method
+
+(1..10).step(2) { |num| p num }
+p (1..10).step(2).to_a
+
+# .step method是range跳行寫法
+
+p (10..1).step(-1).to_a
+
+# 往下降邏輯跟python一樣
+
+p 10.step(1, -1).to_a
+
+# 也可以這樣子寫，而且要注意，某些環境必須像這樣寫才會通過
+
+p 10.downto(1).to_a
+
+# 當然你也可以這樣子寫，但是呢，downto method不能指定間隔，如果要跳2或以上， 你還是得靠step method
