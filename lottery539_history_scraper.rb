@@ -50,11 +50,10 @@ def check_numbers(unit_data)
 end
 
 ActiveRecord::Base.establish_connection(
-  adapter: 'mysql2',
-  database: 'lottery539history',
-  username: 'root',
-  password: 'aq123edsw',
-  host: 'localhost'
+  adapter: 'postgresql',
+  database: 'lotteryhistory',
+  username: 'somebodyforluis',
+  password: ''
 )
 
 class Lottery539 < ActiveRecord::Base
