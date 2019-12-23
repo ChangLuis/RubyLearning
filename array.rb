@@ -232,5 +232,3 @@ p unique_array.uniq
 
 # array要找未重複的數字，可以不用像python那樣轉成set
 # 可以直接用.uniq method
-
-
