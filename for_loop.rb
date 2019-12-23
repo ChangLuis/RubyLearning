@@ -81,3 +81,7 @@ p 10.step(1, -1).to_a
 p 10.downto(1).to_a
 
 # 當然你也可以這樣子寫，但是呢，downto method不能指定間隔，如果要跳2或以上， 你還是得靠step method
+
+(1..10).step { |num| p num }
+
+# 你也可以不寫跳行的部分，這樣就會像 times method一樣，從起始處掃到尾
