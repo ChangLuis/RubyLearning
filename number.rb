@@ -29,3 +29,8 @@ p sqrt_num1, sqrt_num2
 p sqrt_num1.to_i
 
 # 這樣才能轉成整數
+
+p 15.zero?
+
+# 我看到這個method的時候，真的覺得很妙
+# 我看到這個method情境是要確認當前index不是0的時候
